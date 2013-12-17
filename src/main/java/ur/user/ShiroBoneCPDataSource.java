@@ -7,7 +7,9 @@ import com.jolbox.bonecp.BoneCPDataSource;
  */
 public class ShiroBoneCPDataSource extends BoneCPDataSource {
 
-    public ShiroBoneCPDataSource() {
+	private static final long serialVersionUID = 1L;
+
+	public ShiroBoneCPDataSource() {
         super();
         this.setDriverClass("com.mysql.jdbc.Driver");
         this.setJdbcUrl("jdbc:mysql://localhost:3306/spring_test");

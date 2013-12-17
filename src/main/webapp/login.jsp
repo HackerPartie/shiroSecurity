@@ -11,7 +11,7 @@
                         <h3 class="panel-title">Please sign in</h3>
                     </div>
                     <div class="panel-body">
-                        <form name="loginform" action="" method="POST" accept-charset="UTF-8" role="form">
+                        <form name="loginform" action="" method="POST" accept-charset="UTF-8">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Username or Email" name="username" type="text">
