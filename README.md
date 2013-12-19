@@ -1,8 +1,6 @@
 shiroSecurity
 =============
 
-Prerequesites:
-
-maven 3
-
+Prerequesites: 
+maven 3 
 jdk 7
