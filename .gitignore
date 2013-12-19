@@ -13,5 +13,5 @@ bin/
 *.ear
 *.db
 .metadata
-database.properties
+config/database.properties
 
