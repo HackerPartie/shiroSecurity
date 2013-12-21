@@ -47,7 +47,7 @@
         <h3>Roles you have</h3>
 
         <p>
-                <shiro:hasRole name="ADMIN">Administrator<br />
+                <shiro:hasRole name="adin">Administrator<br />
                 </shiro:hasRole>
                 <shiro:hasRole name="USER_P1">Perfil 1<br />
                 </shiro:hasRole>
@@ -58,7 +58,7 @@
         <h3>Roles you DON'T have</h3>
 
         <p>
-                <shiro:lacksRole name="ADMIN">Administrator<br />
+                <shiro:lacksRole name="admin">Administrator<br />
                 </shiro:lacksRole>
                 <shiro:lacksRole name="USER_P1">Perfil 1<br />
                 </shiro:lacksRole>

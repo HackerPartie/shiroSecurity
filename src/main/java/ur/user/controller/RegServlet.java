@@ -36,6 +36,7 @@ public class RegServlet extends HttpServlet {
 
         try {
             dbAccess.insertUser(username, email, name, encrypted);
+            dbAccess.assignRole(username);
         } catch (Exception e) {
             e.printStackTrace();
         }
