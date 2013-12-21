@@ -11,7 +11,7 @@ create a new mysql-user shiro with password shiro
 login in with your new user:
 -    mysql -u shiro -p  
 -    create database hacker_partie;
--    quit;
+-    quit;  
 you can use different credentials and names, you only have to change it also in the code!
  
 now run the sample.sql:  
