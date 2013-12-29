@@ -1,14 +1,17 @@
 <%@ include file="include.jsp"%>
 
+<!DOCTYPE html>
 <html>
 <head>
 <link type="text/css" rel="stylesheet"
-        href="<c:url value="/style.css"/>" />
+        href="<c:url value="include/style.css"/>" />
 <title>Auth</title>
 </head>
 <body>
 
-        <h1>Simple Shiro Web App</h1>
+    <%@include file="include/header.jsp" %>
+
+    <div class="container">
 
         <p>
                 Hi
@@ -21,7 +24,7 @@
                         <a href="<c:url value="/logout"/>">Log out</a>
                 </shiro:user>
                 <shiro:guest>
-                        <a href="<c:url value="/login.jsp"/>">Log in</a></shiro:guest>
+                        <a href="<c:url value="/login.jsp"></c:url>">Log in</a></shiro:guest>
                 )
         </p>
 
@@ -38,34 +41,7 @@
                 </p>
         </shiro:guest>
 
-        <h2>Roles</h2>
-
-        <p>To show some taglibs, here are the roles you have and don't
-                have. Log out and log back in under different user accounts to see
-                different roles.</p>
-
-        <h3>Roles you have</h3>
-
-        <p>
-                <shiro:hasRole name="adin">Administrator<br />
-                </shiro:hasRole>
-                <shiro:hasRole name="USER_P1">Perfil 1<br />
-                </shiro:hasRole>
-                <shiro:hasRole name="USER_P2">Perfil 2<br />
-                </shiro:hasRole>
-        </p>
-
-        <h3>Roles you DON'T have</h3>
-
-        <p>
-                <shiro:lacksRole name="admin">Administrator<br />
-                </shiro:lacksRole>
-                <shiro:lacksRole name="USER_P1">Perfil 1<br />
-                </shiro:lacksRole>
-                <shiro:lacksRole name="USER_P2">Perfil 2<br />
-                </shiro:lacksRole>
-        </p>
-
+    </div>
 
 </body>
 </html>

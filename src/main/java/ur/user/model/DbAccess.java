@@ -6,9 +6,6 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
-/**
- * Created by jens on 12/17/13.
- */
 public class DbAccess {
     private Connection connect = null;
     private Statement statement = null;
@@ -17,12 +14,11 @@ public class DbAccess {
 
     public void insertUser(String username, String email, String name, String password) throws Exception {
         this.connectDataBase();
-        preparedStatement = connect.prepareStatement("insert into users value (?,?,?,?,?)");
-        preparedStatement.setInt(1, 0);
-        preparedStatement.setString(2, username);
-        preparedStatement.setString(3, email);
-        preparedStatement.setString(4, name);
-        preparedStatement.setString(5, password);
+        preparedStatement = connect.prepareStatement("insert into users value (?,?,?,?)");
+        preparedStatement.setString(1, username);
+        preparedStatement.setString(2, email);
+        preparedStatement.setString(3, name);
+        preparedStatement.setString(4, password);
         preparedStatement.executeUpdate();
         connect.close();
 
@@ -30,10 +26,9 @@ public class DbAccess {
 
     public void assignRole(String username) throws Exception {
         this.connectDataBase();
-        preparedStatement = connect.prepareStatement("insert into user_roles value(?,?,?)");
-        preparedStatement.setInt(1, 0);
-        preparedStatement.setString(2, username);
-        preparedStatement.setString(3, "user");
+        preparedStatement = connect.prepareStatement("insert into user_roles value(?,?)");
+        preparedStatement.setString(1, username);
+        preparedStatement.setString(2, "user");
         preparedStatement.executeUpdate();
         connect.close();
 

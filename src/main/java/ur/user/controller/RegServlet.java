@@ -6,6 +6,7 @@ import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.crypto.hash.Sha512Hash;
 import ur.user.model.DbAccess;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,14 +34,15 @@ public class RegServlet extends HttpServlet {
 
         PasswordService svc = new DefaultPasswordService();
         String encrypted = svc.encryptPassword(this.password);
+        RequestDispatcher view = req.getRequestDispatcher("index.jsp");
 
         try {
             dbAccess.insertUser(username, email, name, encrypted);
             dbAccess.assignRole(username);
+            view.forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
 }
