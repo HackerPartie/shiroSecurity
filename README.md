@@ -21,9 +21,9 @@ Start this app
 ==============
 
 For development mode our shiroSecurity sample-app is configured to use jetty at port 8081.
-mvn jetty:run
-point your browser to 
-http://localhost:8081
+mvn jetty:run  
+point your browser to  
+http://localhost:8081  
 
 Now play around a little, register a new user, login, logout and have fun.
 
