@@ -20,7 +20,7 @@ after that, run the sample.sql given with this sample-app on your new database:
 Start this app
 ==============
 
-For development mode our shiroSecurity sample-app is configured to use jetty at port 8081.
+For development mode our shiroSecurity sample-app is configured to use jetty at port 8081.  
 mvn jetty:run  
 point your browser to  
 http://localhost:8081  
