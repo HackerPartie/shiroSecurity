@@ -1,22 +1,61 @@
-# create db
-# alter table simple_shiro_web_app.ROLES_PERMISSIONS drop foreign key RP_1;
-# alter table simple_shiro_web_app.ROLES_PERMISSIONS drop foreign key RP_2;
-# alter table simple_shiro_web_app.USERS_ROLES drop foreign key UR_1;
-# alter table simple_shiro_web_app.USERS_ROLES drop foreign key UR_2;
+#create db
+#alter table roles_permissions drop foreign key rp_1;
+#alter table roles_permissions drop foreign key rp_2;
+#alter table user_roles drop foreign key ur_1;
+#alter table user_roles drop foreign key ur_2;
 drop table if exists permissions;
 drop table if exists roles;
 drop table if exists roles_permissions;
 drop table if exists users;
 drop table if exists user_roles;
-create table permissions (name varchar(30) not null, description varchar(255), primary key (name));
-create table roles (name varchar(20) not null, description varchar(255), primary key (name));
-create table roles_permissions (role_name varchar(20) not null, permission_name varchar(30) not null);
-create table users (username varchar(15) not null, email varchar(100), name varchar(65), password varchar(255) not null, primary key (username));
-create table user_roles (username varchar(15) not null, rolename varchar(20) not null);
-alter table roles_permissions add index RP_1 (rolename), add constraint RP_1 foreign key (rolename) references roles (name);
-alter table roles_permissions add index RP_2 (permission_name), add constraint RP_2 foreign key (permission_name) references permissions (name);
-alter table user_roles add index UR_1 (username), add constraint UR_1 foreign key (username) references users (username);
-alter table user_roles add index UR_2 (rolename), add constraint UR_2 foreign key (rolename) references roles (name);
+
+create table permissions (
+    name varchar(30) not null,
+    description varchar(255),
+    primary key (name)
+);
+
+create table roles (
+    name varchar(20) not null,
+    description varchar(255),
+    primary key (name)
+);
+
+create table roles_permissions (
+    rolename varchar(20) not null,
+    permission_name varchar(30) not null
+);
+
+create table users (
+    username varchar(15) not null,
+    email varchar(100),
+    name varchar(65),
+    password varchar(255) not null,
+    primary key (username)
+);
+
+create table user_roles (
+    username varchar(15) not null,
+    rolename varchar(20) not null
+);
+
+alter table roles_permissions add index rp_1 (rolename),
+    add constraint rp_1 foreign key (rolename) references roles (name);
+
+alter table roles_permissions add index rp_2 (permission_name),
+    add constraint rp_2 foreign key (permission_name) references permissions (name);
+
+alter table user_roles add index ur_1 (username),
+    add constraint ur_1 foreign key (username) references users (username);
+
+alter table user_roles add index ur_2 (rolename),
+    add constraint ur_2 foreign key (rolename) references roles (name);
+
+
+-- # insert some sample roles:
+
+insert into roles (name, description) values ('admin', 'Administrator');
+insert into roles (name, description) values ('user', 'User');
 
 -- insert users
 -- The password values are the output of Shiro's command line hasher:
