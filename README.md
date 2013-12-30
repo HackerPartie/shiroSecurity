@@ -24,8 +24,8 @@ After that, run the sample.sql given with this sample-app on your new database:
 
     mysql -u shiro -p hacker_partie < sample.sql
     
-Start this app
-==
+### Start this app
+
 
 For development environment our shiroSecurity sample-app is configured to use jetty at port 8081.  
 mvn jetty:run  
