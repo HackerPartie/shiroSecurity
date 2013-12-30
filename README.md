@@ -10,7 +10,7 @@ mysql
 
 
 Login in to your mysql-server and create a database. For this example we took hacker_partie as db_name and shiro as user and shiro as password.
-Create a conf directory in root path of this application and put a database.properties in there. 
+Create a config directory in root path of this application and put a database.properties in there. 
 
     jdbc.url = jdbc:mysql://localhost:3306/hacker_partie
     jdbc.driver = com.mysql.jdbc.Driver
