@@ -6,8 +6,8 @@ maven 3
 jdk 1.6 or higher  
 mysql 
 
-DB Setup
-==
+### DB Setup
+
 
 Login in to your mysql-server and create a database. For this example we took hacker_partie as db_name and shiro as user and shiro as password.
 Create a conf directory in root path of this application and put a database.properties in there. 
