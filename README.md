@@ -9,10 +9,10 @@ mysql
 ### DB Setup
 
 
-Login in to your mysql-server and create a database. For this example we took hacker_partie as db_name and shiro as user and shiro as password.
+Login in to your mysql-server and create a database. For this example we took shiro as db_name and shiro as user and shiro as password.
 Create a config directory in root path of this application and put a database.properties in there. 
 
-    jdbc.url = jdbc:mysql://localhost:3306/hacker_partie
+    jdbc.url = jdbc:mysql://localhost:3306/shiro
     jdbc.driver = com.mysql.jdbc.Driver
     jdbc.user = shiro
     jdbc.password = shiro
@@ -22,7 +22,7 @@ It is a bit stupid putting the db-credentials twice in one project, we will fix 
     
 After that, run the sample.sql given with this sample-app on your new database:
 
-    mysql -u shiro -p hacker_partie < sample.sql
+    mysql -u shiro -p shiro < sample.sql
     
 ### Start this app
 
