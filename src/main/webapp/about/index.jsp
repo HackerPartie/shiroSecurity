@@ -19,6 +19,21 @@
 
         <div class="container">
 
-                <h4>About</h4>
+            <h4>About</h4>
+
+            <p>
+                Hi
+                <shiro:guest>Guest</shiro:guest>
+                <shiro:user>
+                    <shiro:principal />
+                </shiro:user>
+                ! (
+                <shiro:user>
+                    <a href="<c:url value="/logout"/>">Log out</a>
+                </shiro:user>
+                <shiro:guest>
+                    <a href="<c:url value="/login.jsp"></c:url>">Log in</a></shiro:guest>
+                )
+            </p>
 
         </div>
