@@ -59,7 +59,13 @@ public class DbAccess {
     private Properties prop () {
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream("/home/jens/workspace/examples/javaKurs/ur-der-user/config/database.properties"));
+            String getEnvUr = System.getenv("UR_DER_USER");
+            String getEnvHome = System.getenv("HOME");
+            String filename = getEnvHome + "/" + getEnvUr + "/config/database.properties";
+            System.out.println(filename);
+            File dbfile = new File(filename);
+            properties.load(new FileInputStream(dbfile));
+
         } catch (IOException e) {
             System.err.println("prop() e: " + e);
         }
